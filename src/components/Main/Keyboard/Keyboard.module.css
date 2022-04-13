@@ -30,6 +30,7 @@
 }
 .Keyboard strong:hover {
     box-shadow: #fff 0 0 5px;
+    cursor: default
 }
 
 .Keyboard .Enter {

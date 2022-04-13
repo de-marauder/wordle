@@ -1,0 +1,30 @@
+.Modal {
+    background: #222;
+    box-shadow: #fff 0 0 5px;
+    min-height: 200px;
+    width: 80%;
+    position: fixed;
+    padding: 1em;
+    text-align: center;
+}
+.Modal * {
+    margin-bottom: 1rem;
+}
+.Modal h2 {
+    font-size: 1.8em;
+}
+.Modal p {
+    font-size: 1.2em;
+}
+.Modal button {
+    padding: 1rem;
+    border-radius: 1.5em;
+    color: #222;
+    font-size: 1.2em;
+}
+
+@media (min-width: 500px) {
+    .Modal {
+        max-width: 500px;
+    }
+}

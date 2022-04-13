@@ -1,7 +1,8 @@
 .Main {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
     height: calc(100vh - 120px);
     padding: 1rem;
 }
