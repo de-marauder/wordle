@@ -1,0 +1,22 @@
+.Inputs {
+    width: 100vw;
+    max-width: 300px;
+    margin: 2em auto 
+}
+.Word {
+    width: fit-content;
+    margin: 0 auto;
+}
+.Letter {
+    /* line-height: 3em; */
+    border: #ddd 3px solid;
+    border-radius: 0.5rem;
+    font-size: 2em;
+    margin: 0.3rem;
+    padding: 0.rem;
+    min-width: 2.4ch;
+    min-height: 2.4ch;
+    display: inline-flex;
+    align-items: center;
+    justify-content:  center;
+}
