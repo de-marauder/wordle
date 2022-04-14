@@ -26,12 +26,15 @@ export default function Keyboard(props) {
 
     const style1 = {
         backgroundColor: "green",
+        border: "none"
     }
     const style2 = {
         background: "#222",
+        border: "none"
     }
     const style3 = {
         background: "yellow",
+        border: "none"
     }
 
     const styleCondition = (id) => {
@@ -41,7 +44,7 @@ export default function Keyboard(props) {
         const i = letterList.reverse().indexOf(ALPHABET[id])
 
         console.log(ALPHABET[id])
-        console.log(i, letterListBool.reverse()[i])
+        
         // console.log([i])
 
         if (letterListBool[i] === '1') { return style1 }

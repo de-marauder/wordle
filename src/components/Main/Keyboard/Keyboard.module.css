@@ -1,17 +1,16 @@
 .Keyboard {
   flex-grow: 1;
-  width: calc(100vw - 3rem);
+  width: 100vw;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-content: space-between;
-  font-size: 1em;
+  align-content: center;
+  font-size: 0.8em;
   font-family: "Roboto Condensed", sans-serif;
 }
 
 .KeyRow {
-  width: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,13 +21,14 @@
 .KeyRow strong {
   background: #444;
   margin: 0.1rem;
-  padding: 1rem;
+  /* padding: 1rem; */
   height: 90%;
-  min-width: 2em;
+  min-width: 2.6em;
   border-radius: 5px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  /* flex-grow: 1; */
 }
 .Keyboard strong:hover {
   box-shadow: #fff 0 0 5px;
@@ -50,12 +50,13 @@
 @media (min-width: 500px) {
   .Keyboard {
     max-width: 300px;
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
 
   .Keyboard strong {
     height: 3rem;
-    width: 3rem;
+    max-width: 3rem;
+    padding: 0
   }
 
   .Keyboard .Backspace {

@@ -1,0 +1,17 @@
+.Sidebar {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: 20;
+    background: #111;
+}
+
+.Sidebar * {
+    color: #fff
+}
+
+/* @media (min-width: 500px) {
+    .Sidebar {
+        max-width: 300px;
+    }
+} */

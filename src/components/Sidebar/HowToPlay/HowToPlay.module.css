@@ -1,0 +1,50 @@
+.HowToPlay {
+  max-width: 500px;
+  padding: 1rem;
+  margin: 0 auto;
+  position: relative;
+}
+
+.Title {
+  text-align: center;
+}
+
+.Title, .HowToPlay h3 {
+    margin: 1rem 0;
+}
+
+.HowToPlay div p {
+  margin-bottom: 1rem;
+}
+
+.HowToPlay hr {
+  margin: 0.5rem 0;
+}
+
+.Word {
+  width: 90%;
+  /* margin: 0 auto; */
+  height: 16%;
+  display: flex;
+}
+
+.Letter {
+  border: rgba(255, 255, 255, 0.397) 1px solid;
+  border-radius: 0.3rem;
+  font-size: 1.8em;
+  margin: 0.3rem;
+  min-width: 2.4ch;
+  min-height: 80%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.Cancel {
+  margin: 0.5em 1em;
+  font-size: 1.2em;
+  position: absolute;
+  right: 0;
+  padding: 0
+}

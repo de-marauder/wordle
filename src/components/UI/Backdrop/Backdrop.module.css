@@ -3,7 +3,7 @@
     width: 100vw;
     position: fixed;
     background: rgb(0, 0, 0, 0.8);
-    top: 110px
+    top: 60px
 }
 
 @media (min-width: 500px) {
