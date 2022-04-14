@@ -1,4 +1,5 @@
 .Keyboard {
+  flex-grow: 1;
   width: calc(100vw - 3rem);
   margin: 0 auto;
   display: flex;
@@ -10,53 +11,54 @@
 }
 
 .KeyRow {
-    width: fit-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30%;
 }
 
 .KeyRow strong {
-    background: #444;
-    margin: 0.1rem;
-    padding: 1rem;
-    height: 2rem;
-    min-width: 2rem;
-    border-radius: 5px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+  background: #444;
+  margin: 0.1rem;
+  padding: 1rem;
+  height: 90%;
+  min-width: 2em;
+  border-radius: 5px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 .Keyboard strong:hover {
-    box-shadow: #fff 0 0 5px;
-    cursor: default
+  box-shadow: #fff 0 0 5px;
+  cursor: default;
 }
 
 .Keyboard .Enter {
-    font-size: 1rem;
-    min-width: fit-content;
-    padding: 0.5rem;
+  font-size: 1rem;
+  min-width: fit-content;
+  padding: 0.5rem;
 }
 
 .Keyboard .Backspace {
-    min-width: fit-content;
-    padding: 0.5rem;
-    font-size: 1.2rem;
+  min-width: fit-content;
+  padding: 0.5rem;
+  font-size: 1.2rem;
 }
 
 @media (min-width: 500px) {
-    .Keyboard {
-        max-width: 300px;
-        font-size: 1.5em;
-    }
-    
-    .Keyboard strong {
-        height: 3rem;
-        width: 3rem;
-    }
-    
-    .Keyboard .Backspace {
-        padding: 0.6rem;
-    }
+  .Keyboard {
+    max-width: 300px;
+    font-size: 1.5em;
+  }
+
+  .Keyboard strong {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .Keyboard .Backspace {
+    padding: 0.6rem;
+  }
 }

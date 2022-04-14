@@ -1,11 +1,11 @@
 import React from 'react'
-import Backdrop from './Backdrop/Backdrop'
+import Backdrop from '../Backdrop/Backdrop'
 
 import classes from './Modal.module.css'
 
 export default function Modal({ message, resetGame }) {
     return (
-        <>
+        <div className={classes.ModalWrapper}>
             <Backdrop />
             <div className={classes.Modal}>
                 <h2>Message</h2>
@@ -15,6 +15,6 @@ export default function Modal({ message, resetGame }) {
                 </p>
                 <button onClick={resetGame}>Play again</button>
             </div>
-        </>
+        </div>
     )
 }
