@@ -17,9 +17,11 @@ export default function Keyboard(props) {
 
     })
 
+    // console.log("LetterList", letterList)
+    // console.log("LetterListBool", letterListBool)
 
-    letterList = letterList.join('').split('')
-    letterListBool = letterListBool.join('').split('')
+    letterList = letterList.join('').split('').reverse()
+    letterListBool = letterListBool.join('').split('').reverse()
 
     console.log("LetterList", letterList)
     console.log("LetterListBool", letterListBool)
@@ -33,7 +35,7 @@ export default function Keyboard(props) {
         border: "none"
     }
     const style3 = {
-        background: "yellow",
+        background: "#ffbc00",
         border: "none"
     }
 
@@ -41,15 +43,26 @@ export default function Keyboard(props) {
         if (!(letterList.includes(ALPHABET[id]))) {
             return null
         }
-        const i = letterList.reverse().indexOf(ALPHABET[id])
+        const iArr = []
 
-        console.log(ALPHABET[id])
-        
-        // console.log([i])
+        letterList.forEach((el, index) => {
+            if (el === ALPHABET[id]) {
+                iArr.push(index)
+            }
+        })
+        const i = iArr.map((el) => {
+            if (letterListBool[el] === '1') {
+                return el
+            } else if (letterListBool[el] === '+') {
+                return el
+            } else {
+                return el
+            }
+        })
 
-        if (letterListBool[i] === '1') { return style1 }
-        else if (letterListBool[i] === '0') { return style2 }
-        else if (letterListBool[i] === '+') { return style3 }
+        if (letterListBool[i[0]] === '1') { return style1 }
+        else if (letterListBool[i[0]] === '0') { return style2 }
+        else if (letterListBool[i[0]] === '+') { return style3 }
         return null
     }
 
@@ -83,40 +96,6 @@ export default function Keyboard(props) {
     return (
         <div className={classes.Keyboard}>
             {keyboard}
-            {/* <div className={classes.KeyRow}>
-                <strong>Q</strong>
-            <strong>W</strong>
-            <strong>E</strong>
-            <strong>R</strong>
-            <strong>T</strong>
-            <strong>Y</strong>
-            <strong>U</strong>
-            <strong>I</strong>
-            <strong>O</strong>
-            <strong>P</strong>
-            </div>
-            <div className={classes.KeyRow}>
-                <strong>A</strong>
-                <strong>S</strong>
-                <strong>D</strong>
-                <strong>F</strong>
-                <strong>G</strong>
-                <strong>H</strong>
-                <strong>J</strong>
-                <strong>K</strong>
-                <strong>L</strong>
-            </div>
-            <div className={classes.KeyRow}>
-                <strong className={classes.Enter}>ENTER</strong>
-                <strong>Z</strong>
-                <strong>X</strong>
-                <strong>C</strong>
-                <strong>V</strong>
-                <strong>B</strong>
-                <strong>N</strong>
-                <strong>M</strong>
-                <strong className={classes.Backspace}><MdOutlineBackspace /></strong>
-            </div> */}
         </div>
     )
 }

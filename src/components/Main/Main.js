@@ -36,6 +36,11 @@ export default function Main() {
             return guessBool
         }
 
+        if (!(WORD_LIST.includes(guess))) {
+            alert("Word not in list!")
+            return ['0', '0', '0', '0', '0']
+        }
+
         let copy_word = [word][0]
         let copy_word_list = copy_word.split('')
 

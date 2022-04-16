@@ -11,7 +11,7 @@ export default function HowToPlay(props) {
         border: 'none'
     }
     const style2 = {
-        background: "yellow",
+        background: "#ffbc00",
         border: 'none'
     }
     const style3 = {
@@ -20,23 +20,22 @@ export default function HowToPlay(props) {
     }
 
     const words = [
-        ['WEARY', [`The letter `, <strong>W</strong>, ` is in the word and in the correct spot`]],
-        ['PILLS', [`The letter `, <strong>I</strong>, ` is in the word but in the wrong spot`]],
-        ['VAGUE', [`The letter `, <strong>U</strong>, ` is not in the word in any spot`]]
+        ['WEARY', [`The letter `, <strong key={1}>W</strong>, ` is in the word and in the correct spot`]],
+        ['PILLS', [`The letter `, <strong key={2}>I</strong>, ` is in the word but in the wrong spot`]],
+        ['VAGUE', [`The letter `, <strong key={3}>U</strong>, ` is not in the word in any spot`]]
     ]
 
     const examples = words.map((word, id) => {
 
-        const letters = word[0].split('').map((letter) => {
+        const letters = word[0].split('').map((letter, i) => {
             return (
-                <div>
+                <div key={i}>
                     <strong style={letter === 'W' ? style1 : letter === 'I' ? style2 : letter === 'U' ? style3 : null } className={classes.Letter}>{letter}</strong>
                 </div>
             )
         })
-        console.log(word[1])
         return (
-            <div>
+            <div key={id}>
                 <div className={classes.Word}>
                     {letters}
                 </div>
@@ -59,20 +58,6 @@ export default function HowToPlay(props) {
             <div>
                 <h3>Examples</h3>
                 {examples}
-                {/* <div>
-                    <div>
-                        <div></div>
-                    </div>
-                    <p></p>
-                </div>
-                <div>
-                    <div></div>
-                    <p></p>
-                </div>
-                <div>
-                    <div></div>
-                    <p></p>
-                </div> */}
             </div>
         </div>
     )

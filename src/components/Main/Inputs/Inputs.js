@@ -13,12 +13,15 @@ export default function Inputs(props) {
 
     const style1 = {
         backgroundColor: "green",
+        border: 'none'
     }
     const style2 = {
         background: "#444",
+        border: 'none'
     }
     const style3 = {
-        background: "yellow",
+        background: "#ffbc00",
+        border: 'none'
     }
 
     const sixWords = [1,2,3,4,5,6].map((_, id)=>{
@@ -33,11 +36,6 @@ export default function Inputs(props) {
         return (
             <div key={id} className={classes.Word}>
                 {word}
-                {/* <strong style={resultBoolList[0] === 1 ? style1 : resultBoolList[0] === 0 ? style2 : resultBoolList[0] === null ? style3 : null} className={classes.Letter}>{props.guessList.length === id ? (props.guess[0] || '') : props.guessList[id] ? (props.guessList[id][0]): null}</strong>
-                <strong className={classes.Letter}>{props.guessList.length === id ? (props.guess[1] || '') : props.guessList[id] ? (props.guessList[id][1]): null}</strong>
-                <strong className={classes.Letter}>{props.guessList.length === id ? (props.guess[2] || '') : props.guessList[id] ? (props.guessList[id][2]): null}</strong>
-                <strong className={classes.Letter}>{props.guessList.length === id ? (props.guess[3] || '') : props.guessList[id] ? (props.guessList[id][3]): null}</strong>
-                <strong className={classes.Letter}>{props.guessList.length === id ? (props.guess[4] || '') : props.guessList[id] ? (props.guessList[id][4]): null}</strong> */}
             </div>
         )
     })
@@ -46,49 +44,6 @@ export default function Inputs(props) {
         <div className={classes.Inputs}>
             <input type={'text'} value={props.guess} hidden autoFocus={true} onChange={(e)=>{!(props.guess.length >= 5) ? props.setGuess(e.target.value.toUpperCase()) : props.setGuess(e.target.value.slice(0,5))}} />
             {sixWords}
-            {/* <div className={classes.Word}>
-                {word}
-                <strong className={classes.Letter}>{props.guess[0] || ''}</strong>
-                <strong className={classes.Letter}>{props.guess[1] || ''}</strong>
-                <strong className={classes.Letter}>{props.guess[2] || ''}</strong>
-                <strong className={classes.Letter}>{props.guess[3] || ''}</strong>
-                <strong className={classes.Letter}>{props.guess[4] || ''}</strong>
-            </div>
-            <div className={classes.Word}>
-                <strong className={classes.Letter}></strong>
-                <strong className={classes.Letter}></strong>
-                <strong className={classes.Letter}></strong>
-                <strong className={classes.Letter}></strong>
-                <strong className={classes.Letter}></strong>
-            </div>
-            <div className={classes.Word}>
-                <strong className={classes.Letter}></strong>
-                <strong className={classes.Letter}></strong>
-                <strong className={classes.Letter}></strong>
-                <strong className={classes.Letter}></strong>
-                <strong className={classes.Letter}></strong>
-            </div>
-            <div className={classes.Word}>
-                <strong className={classes.Letter}></strong>
-                <strong className={classes.Letter}></strong>
-                <strong className={classes.Letter}></strong>
-                <strong className={classes.Letter}></strong>
-                <strong className={classes.Letter}></strong>
-            </div>
-            <div className={classes.Word}>
-                <strong className={classes.Letter}></strong>
-                <strong className={classes.Letter}></strong>
-                <strong className={classes.Letter}></strong>
-                <strong className={classes.Letter}></strong>
-                <strong className={classes.Letter}></strong>
-            </div>
-            <div className={classes.Word}>
-                <strong className={classes.Letter}></strong>
-                <strong className={classes.Letter}></strong>
-                <strong className={classes.Letter}></strong>
-                <strong className={classes.Letter}></strong>
-                <strong className={classes.Letter}></strong>
-            </div> */}
         </div>
     )
 }
