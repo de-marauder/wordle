@@ -8,7 +8,7 @@ export default function Menu(props) {
   return (
     <div>
         {/* <BiMenuAltLeft className='NavButtons'/> */}
-        <IoHelpCircleOutline onClick={props.toggleSidebar} className='NavButtons'/>
+        <IoHelpCircleOutline onClick={()=>{props.toggleSidebar(!props.sidebar); props.setShowHelp(!props.showHelp)}} className='NavButtons'/>
     </div>
   )
 }

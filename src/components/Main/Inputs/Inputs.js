@@ -26,7 +26,7 @@ export default function Inputs(props) {
 
     const sixWords = [1,2,3,4,5,6].map((_, id)=>{
         // console.log(props.guessList.length, id)
-        console.log(resultBoolList[0])
+        // console.log(resultBoolList[0])
 
         const word = [1,2,3,4,5].map((_, i)=>{
             return <strong key={i} style={id < resultBoolList.length ? (resultBoolList[id][i] === 1 ? style1 : resultBoolList[id][i] === 0 ? style2 : resultBoolList[id][i] === null ? style3 : null) : null} className={classes.Letter}>{props.guessList.length === id ? (props.guess[i] || '') : props.guessList[id] ? (props.guessList[id][i]): null}</strong>

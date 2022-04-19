@@ -3,6 +3,8 @@
   padding: 1rem;
   margin: 0 auto;
   position: relative;
+  top: 0;
+  bottom: 0
 }
 
 .Title {

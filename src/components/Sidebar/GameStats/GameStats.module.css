@@ -1,0 +1,58 @@
+.Section1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  border-bottom: solid 1px #aaa;
+  margin-bottom: 1em;
+}
+.Section2 {
+  margin: 2em auto;
+  text-align: center;
+  height: 60vh;
+  overflow-y: auto;
+}
+.Section2 .Data p {
+  margin: 0.5em 1em;
+}
+.Graph {
+  margin: 2em auto;
+}
+
+.FrequencyWrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border: #aaa solid 1px;
+  border-radius: 1em;
+}
+.Frequency {
+  display: flex;
+  flex-direction: column;
+  padding: 1em 1em 0;
+}
+.Frequency span {
+  margin: 0.2em auto;
+  font-weight: bold;
+}
+.passed {
+  color: green;
+}
+.failed {
+  color: hsla(0, 100%, 50%, 0.699);
+}
+.Bar {
+  height: 1em;
+  border-left: solid 2px #91cc19;
+  position: relative;
+  background: #91cc19;
+}
+.Bar span {
+  position: absolute;
+  right: 0;
+  top: -1.2em;
+}
+.Data {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}

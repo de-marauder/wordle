@@ -4,10 +4,13 @@ import {FiSettings} from 'react-icons/fi'
 
 import '../../../App.css'
 
-export default function Stats() {
+export default function Stats(props) {
   return (
     <div>
-        <IoStatsChart className='NavButtons' />
+        <IoStatsChart onClick={()=>{
+          props.toggleSidebar(!props.sidebar)
+          props.setShowStats(!props.showStats)
+        }} className='NavButtons' />
         <FiSettings className='NavButtons' />
     </div>
   )

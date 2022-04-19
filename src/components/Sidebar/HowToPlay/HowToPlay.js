@@ -46,7 +46,10 @@ export default function HowToPlay(props) {
 
     return (
         <div className={classes.HowToPlay}>
-            <IoClose onClick={()=>{props.toggleSidebar(!props.sidebar)}} className={'NavButtons' + ' ' + classes.Cancel} />
+            <IoClose onClick={()=>{
+                props.toggleSidebar(!props.sidebar); 
+                props.setShowHelp(!props.showHelp)
+                }} className={'NavButtons' + ' ' + classes.Cancel} />
 
             <h2 className={classes.Title}>How to play</h2>
             <div>

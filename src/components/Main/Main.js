@@ -18,8 +18,13 @@ export default function Main() {
 
     const guessList = useRef([])
     const resultList = useRef([])
+    let gamesPlayed = JSON.parse(localStorage.getItem('gamesPlayed')) || []
     const wordId = useRef(Math.floor(Math.random() * WORD_LIST.length + 1))
-    const word = WORD_LIST[wordId.current]
+    localStorage.setItem('wordId', wordId.current)
+    let winsCount = localStorage.getItem('winsCount') ? localStorage.getItem('winsCount') : 0
+    localStorage.setItem('winsCount', winsCount)
+    // console.log(localStorage.getItem('wordId'))
+    const word =  WORD_LIST[localStorage.getItem('wordId') || wordId.current]
 
     const backSpace = () => {
         setGuess(guess.split('').splice(0, guess.length - 1).join(''))
@@ -32,14 +37,15 @@ export default function Main() {
         if (guess === word) {
             setMessage("CONGRATULATIONS!!!\n You have guessed correctly!!")
             setShowModal(true)
+            winsCount = Number(winsCount) + 1
+            localStorage.setItem('winsCount', winsCount)
+            gamesPlayed.push({no: gamesPlayed.length, status: 'passed', attemptsTaken: guessList.current.length})
+            localStorage.setItem('gamesPlayed', JSON.stringify(gamesPlayed))
             guessBool = ['1', '1', '1', '1', '1']
             return guessBool
         }
 
-        if (!(WORD_LIST.includes(guess))) {
-            alert("Word not in list!")
-            return ['0', '0', '0', '0', '0']
-        }
+        
 
         let copy_word = [word][0]
         let copy_word_list = copy_word.split('')
@@ -72,7 +78,7 @@ export default function Main() {
                     guessBool[i] = '0'
                 }
             } catch (error) {
-                console.log(`${guess[i]} not in ${copy_word_list}`)
+                // console.log(`${guess[i]} not in ${copy_word_list}`)
                 guessBool[i] = '0'
             }
             // console.log('guessBool = ', guessBool)
@@ -80,7 +86,7 @@ export default function Main() {
             // console.log('new_word = ', copy_word, '\n')
         })
 
-        console.log('Answer = ', guessBool.join(''), '\n')
+        // console.log('Answer = ', guessBool.join(''), '\n')
 
         return guessBool
     }
@@ -90,28 +96,27 @@ export default function Main() {
     }
 
     const submitGuess = (guess) => {
-        console.log(guess)
+        // console.log(guess)
         if (guess.length !== 5) {
             alert("You must enter a 5 letter word")
             return
         }
+        if (!(WORD_LIST.includes(guess.toLowerCase()))) {
+            alert("Word not in list!")
+            return
+        }
         guessList.current.push(guess)
-        // console.log(guessList.current)
         const newGuess = guess.toLowerCase()
         const res = checkWord(newGuess)
         resultList.current.push(res)
         setResult(res)
-        // console.log('result', result)
-
-        // if (resultBool.reduce((prev, curr) => { return (Number(prev) + Number(curr)) }, 0) === 5) {
-        //     // resetGame()
-        //     setShowModal(true)
-        //     setMessage("Welcome traveller! Can you guess the word in 6 tries?")
-        // }
+        
+        
         if (guessList.current.length >= 6) {
             setMessage("Game over! \nYou have exceeded number of tries.")
+            gamesPlayed.current.push({no: gamesPlayed.current.length, status: 'failed', attemptsTaken: 7})
+            localStorage.setItem('gamesPlayed', JSON.stringify(gamesPlayed.current))
             setShowModal(true)
-            // alert("Game over! \nYou have exceed number of tries.")
         }
         setGuess('')
     }
@@ -123,7 +128,8 @@ export default function Main() {
         setResult('')
         setShowModal(false)
         setMessage(null)
-        wordId.current = Math.floor(Math.random() * WORD_LIST.length + 1)
+        wordId.current = Math.floor((Math.random() * WORD_LIST.length) + 1)
+        localStorage.setItem('wordId', wordId.current)
         // console.log(guess)
         // console.log(guessList.current)
         // console.log(message)
@@ -134,6 +140,7 @@ export default function Main() {
     // console.log(resultBool)
     // console.log(resultBool.reduce((prev, curr) => { return (Number(prev) + Number(curr)) }, 0))
     console.log(word)
+    // console.log(localStorage.getItem('winsCount'))
     return (
         <div className={classes.Main}>
             {showModal ? <Modal resetGame={resetGame} message={message} /> : null}
