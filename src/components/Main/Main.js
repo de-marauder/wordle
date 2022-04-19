@@ -113,9 +113,9 @@ export default function Main() {
         
         
         if (guessList.current.length >= 6) {
-            setMessage("Game over! \nYou have exceeded number of tries.")
-            gamesPlayed.current.push({no: gamesPlayed.current.length, status: 'failed', attemptsTaken: 7})
-            localStorage.setItem('gamesPlayed', JSON.stringify(gamesPlayed.current))
+            setMessage(`Game over! \nYou have exceeded number of tries.\nThe word was "${word}"`)
+            gamesPlayed.push({no: gamesPlayed.length, status: 'failed', attemptsTaken: 7})
+            localStorage.setItem('gamesPlayed', JSON.stringify(gamesPlayed))
             setShowModal(true)
         }
         setGuess('')

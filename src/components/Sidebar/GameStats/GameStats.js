@@ -10,7 +10,7 @@ export default function GameStats(props) {
 
     const gamesPlayed = JSON.parse(localStorage.getItem('gamesPlayed')) || []
     const winsCount = Number(localStorage.getItem('winsCount')) || 0
-    console.log(gamesPlayed, winsCount)
+    // console.log(gamesPlayed, winsCount)
 
     const frequency = gamesPlayed.map((el, id) => {
         let style;
@@ -38,12 +38,12 @@ export default function GameStats(props) {
         )
     })
 
-    console.log(frequency)
+    // console.log(frequency)
 
     const graphData = gamesPlayed.map((el) => {
         return el.attemptsTaken
     })
-    console.log(graphData)
+    // console.log(graphData)
     const graphData2 = [1, 2, 3, 4, 5, 6].map((el) => {
         let counter = 0
         let data = { count: counter };
@@ -55,17 +55,17 @@ export default function GameStats(props) {
         })
         return data
     })
-    console.log(graphData2)
+    // console.log(graphData2)
 
     const data = graphData2.map((el, id) => {
         let sumAttempts = 0
         graphData2.forEach((e, i)=>{
-            console.log('e[count]', e['count'])
+            // console.log('e[count]', e['count'])
             // console.log('i', i)
             sumAttempts += e['count']
         })
-        console.log('sumAttempts: ', sumAttempts)
-        console.log(el['count'] * 100/sumAttempts)
+        // console.log('sumAttempts: ', sumAttempts)
+        // console.log(el['count'] * 100/sumAttempts)
         return (
             <div key={id} className={classes2.Data}>
                 <p>{id + 1}</p>

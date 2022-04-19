@@ -23,8 +23,8 @@ export default function Keyboard(props) {
     letterList = letterList.join('').split('').reverse()
     letterListBool = letterListBool.join('').split('').reverse()
 
-    console.log("LetterList", letterList)
-    console.log("LetterListBool", letterListBool)
+    // console.log("LetterList", letterList)
+    // console.log("LetterListBool", letterListBool)
 
     const style1 = {
         backgroundColor: "green",
